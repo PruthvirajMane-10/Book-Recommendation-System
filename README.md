@@ -18,67 +18,88 @@ The system delivers popular recommendations for new users (cold start) and perso
 ✅ End-to-end real-world ML workflow (data → model → deployment)
 
 🧠 Recommendation Approaches
+
 1️⃣ Popularity-Based Recommendation
 
-Used when user interaction history is unavailable.
+- Used when user interaction history is unavailable.
 
-Books are ranked using:
+- Books are ranked using:
 
-Average rating
+- Average rating
 
-Number of user votes
+- Number of user votes
 
 Best for: New users and homepage recommendations
 
 2️⃣ Collaborative Filtering (Item-Based)
 
-Provides personalized recommendations based on user-selected books.
+- Provides personalized recommendations based on user-selected books.
 
 Workflow:
 
-User–item interaction matrix (pivot table)
+- User–item interaction matrix (pivot table)
 
-Cosine similarity between books
+- Cosine similarity between books
 
-Recommend top similar books
+- Recommend top similar books
 
-Best for: Returning users with interaction history
+- Best for: Returning users with interaction history
 
 🛠️ Tech Stack
 
-Programming Language: Python
+- Programming Language: Python
 
-Libraries: Pandas, NumPy, Scikit-learn
+- Libraries: Pandas, NumPy, Scikit-learn
 
-Web Framework: Flask
+- Web Framework: Flask
 
-Frontend: HTML, CSS
+- Frontend: HTML, CSS
 
-Model Storage: Pickle (.pkl)
+- Model Storage: Pickle (.pkl)
 
 📁 Project Structure
 Book-Recommendation-System/
+
 │
+
 ├── app.py                  # Flask application
+
 ├── model.ipynb             # Data preprocessing & model building
+
 ├── requirements.txt
+
 ├── README.md
+
 ├── .gitignore
+
 │
+
 ├── templates/
+
 │   ├── index.html           # Homepage (popular books)
+
 │   └── recommend.html       # Personalized recommendations
+
 │
+
 ├── static/
+
 │   └── style.css
+
 │
+
 └── data/
+
     ├── popular.pkl          # Popularity-based model
+    
     ├── pt.pkl               # Pivot table
+    
     ├── books.pkl            # Book metadata
+    
     └── similarity_scores.pkl# Cosine similarity matrix
 
 ⚙️ How to Run Locally
+
 Step 1: Clone the Repository
 git clone https://github.com/<your-username>/book-recommendation-system.git
 cd book-recommendation-system
@@ -104,17 +125,18 @@ http://127.0.0.1:5000/
 
 🔮 Future Enhancements
 
-User authentication & profile-based recommendations
+- User authentication & profile-based recommendations
 
-Hybrid recommendation system (content + collaborative)
+- Hybrid recommendation system (content + collaborative)
 
-Cloud deployment (AWS / Render / Railway)
+- Cloud deployment (AWS / Render / Railway)
 
-Enhanced UI/UX and performance optimization
+- Enhanced UI/UX and performance optimization
 
 👨‍💻 Author
 
 Pruthviraj Mane
+
 Aspiring Data Scientist | Machine Learning Engineer
 
 📌 Passionate about building real-world ML systems

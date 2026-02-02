@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10 text-center">
+        <h1 class="mb-4 text-white">Book Recommendation System</h1>
+        
+        <form action="/recommend_books" method="post" class="mb-5">
+            <div class="input-group">
+                <input name="user_input" type="text" class="form-control form-control-lg bg-dark text-white border-warning" placeholder="Type a book name (e.g., The Notebook)">
+                <button type="submit" class="btn btn-warning btn-lg px-5">Search</button>
+            </div>
+        </form>
+        
+        {% if data %}
+        <div class="row recommendation-container">
+            <h3 class="text-start mb-4 text-warning">Recommended for you:</h3>
+            {% for i in data %}
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card h-100 p-3 shadow">
+                    <img src="{{ i[2] }}" class="card-img-top mx-auto" style="height: 200px; width: auto; max-width: 100%; border-radius: 5px;">
+                    <div class="card-body px-0">
+                        <p class="book-title mb-1">{{ i[0] }}</p>
+                        <p class="book-author small">{{ i[1] }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if error %}
+            <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

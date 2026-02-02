@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 class="text-center mb-5">Top 50 Most Popular Books</h1>
+<div class="row">
+    {% for i in range(book_name|length) %}
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 p-3 text-center">
+            <img src="{{ image[i] }}" class="card-img-top mb-3" alt="Book Cover" style="height: 250px; object-fit: contain;">
+            <h6 class="text-warning">{{ book_name[i] }}</h6>
+            <p class="small mb-1">Author: {{ author[i] }}</p>
+            <p class="small text-info">Votes: {{ votes[i] }} | Rating: {{ rating[i]|round(2) }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
